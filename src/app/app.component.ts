@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'LP';
+  ex1 = 'Example 1';
+  ex2 = 'Example 2';
+
+  show(val: string) {
+    this.title = val;
+  }
 }

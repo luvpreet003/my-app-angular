@@ -26,6 +26,6 @@ export class UserListService {
   private readonly API_URL = 'https://reqres.in/api/users';
 
   public getUsers(): Observable<UserResponse> {
-    return this.http.get<UserResponse>(this.API_URL); // ✅ Corrected type
+    return this.http.get<UserResponse>(this.API_URL);
   }
 }

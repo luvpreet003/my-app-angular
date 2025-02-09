@@ -1,53 +1,57 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav *ngIf="showNavbar" class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/home"
-            routerLinkActive="active"
-            aria-current="page"
-            >Home</a
+          <a class="nav-link" routerLink="/home" routerLinkActive="active"
+            >SportsHub</a
           >
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="nav-link"
             routerLink="/data-binding"
             routerLinkActive="active"
-            aria-current="page"
             >Data Binding Component</a
           >
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/directive"
-            routerLinkActive="active"
-            aria-current="page"
+          <a class="nav-link" routerLink="/directive" routerLinkActive="active"
             >Directive Component</a
           >
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/address"
-            routerLinkActive="active"
-            aria-current="page"
+          <a class="nav-link" routerLink="/address" routerLinkActive="active"
             >Address</a
           >
-        </li>
-
+        </li> -->
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/users"
-            routerLinkActive="active"
-            aria-current="page"
+          <a class="nav-link" routerLink="/users" routerLinkActive="active"
             >Users</a
           >
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/lazy" routerLinkActive="active"
+            >Lazy</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/templateform"
+            routerLinkActive="active"
+            >TemplateForm</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [ngClass]="{ disabledTab: !isDisabled() }"
+            routerLink="/reactiveform"
+            routerLinkActive="active"
+            >ReactiveForm</a
+          >
+        </li> -->
       </ul>
 
       <!-- Logout Button (Right-Aligned) -->

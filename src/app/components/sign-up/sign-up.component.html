@@ -1,1 +1,27 @@
-<p>Welcome</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <h2>Sign Up Here</h2>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    @if (userForm.controls['email'].invalid &&
+    userForm.controls['email'].touched) {
+    <div class="error">
+      Email is required and must be at least 3 characters.
+    </div>
+    }
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password" />
+    @if (userForm.controls['password'].invalid &&
+    userForm.controls['password'].touched) {
+    <div class="error">
+      password is required and must be at least 10 characters.
+    </div>
+    }
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

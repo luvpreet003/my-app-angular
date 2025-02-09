@@ -1,0 +1,26 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name" />
+    @if (userForm.controls['name'].invalid && userForm.controls['name'].touched)
+    { @if(userForm.controls['name'].hasError('required')){
+    <div class="error">Name is required</div>
+    } @else if(userForm.controls['name'].hasError('minlength')) {
+    <div class="error">Name must be 3 characters</div>
+
+    } }
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    @if (userForm.controls['name'].invalid && userForm.controls['name'].touched)
+    {
+    <div class="error">
+      Email is required and must be at least 3 characters.
+    </div>
+    }
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

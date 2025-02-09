@@ -7,15 +7,23 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Details</th>
+      <th>Day</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.first_name }}</td>
+    <tr *ngFor="let user of users" [class]="user.id % 2 ? 'pink' : 'blue'">
+      <!--  alt method - @for(user in users; track user.id)  -->
+      <!-- alt method - [ngClass]="user.id % 2? 'pink':'blue'" -->
+      <td>@if (user.id % 2) {Mr.} @else {Ms.} {{ user.first_name }}</td>
+
       <td>{{ user.last_name }}</td>
       <td>{{ user.email }}</td>
       <td>
         <button (click)="goToDetails(user.id)">Details</button>
+      </td>
+      <td>
+        @switch(user.id) { @case(user.id) {{{weekList[user.id].name}}} @default
+        {Invalid Day} }
       </td>
     </tr>
   </tbody>
